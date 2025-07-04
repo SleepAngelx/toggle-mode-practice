@@ -1,0 +1,26 @@
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.blue-mode {
+  background-color: blue;
+  color: red;
+}
+
+body.red-mode {
+  background-color: red;
+  color: blue;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
