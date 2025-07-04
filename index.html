@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Color Switcher</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <title>SleepAngelx's Web Practice</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f4f4f4;
+        padding: 50px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      a {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 30px;
+        text-decoration: none;
+        background-color: #007acc;
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      a:hover {
+        background-color: #005fa3;
+      }
+    </style>
   </head>
   <body>
-    <h1>Click the button to change background color</h1>
-    <button onclick="changeColor()">Change Color</button>
-    <button onclick="changeColor2()">Change Color 2</button>
-    <button onclick="resetColor()">Reset Color</button>
+    <h1>🌐 SleepAngelx's Web Practice</h1>
 
-    <button id="hiButton" onclick="sayHi()">点我打招呼</button>
-    <button id="hiButton2" onclick="sayhi2()">ClickMe</button>
-
-    <script src="script.js"></script>
-    <script src="script2.js"></script>
+    <a href="./color-switcher/">🎨 Color Switcher</a>
+    <a href="./dark-mode-toggle/">🌙 Dark Mode Toggle</a>
   </body>
 </html>
