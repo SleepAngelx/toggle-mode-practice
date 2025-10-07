@@ -24,3 +24,22 @@ button {
   background-color: rgb(255, 140, 0);
   color: rgb(255, 255, 255);
 }
+
+
+/* button {
+  transition: transform 0.2s, background 0.3s;
+} */
+
+/* button:hover {
+  transform: scale(1.1);
+  background: #ffcc00;
+} */
+
+#newQuote3 {
+  transition: transform 0.2s， background 0.3s;
+}
+
+#newQuote3:hover {
+  transform: scale(1.1);
+  background: #ffcc00;
+}
