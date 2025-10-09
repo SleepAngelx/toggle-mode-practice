@@ -19,46 +19,70 @@ sadBtn.addEventListener("click", () => {
   document.body.style.backgroundColor = "lightpink";
 });
 
+//2nd part
+
 const happyBtn2 = document.getElementById("happy2");
 const neutralBtn2 = document.getElementById("neutral2");
 const sadBtn2 = document.getElementById("sad2");
+const moodDisplay2 = document.getElementById("moodDisplay2");
+const quoteDisplay = document.getElementById("quotes");
+const authorDisplay = document.getElementById("author");
 
-const happyQuotes = [
-  { text: "Life is good!", author: "Aina from Penang" },
-  { text: "Feeling awesome!", author: "Jason Tan" },
-  { text: "Smiling all day!", author: "Nora Lee" },
-];
-
+const happyQuotes = ["Life is good!", "Feeling awesome!", "Smiling all day!"];
 const neutralQuotes = [
-  { text: "Just another normal day.", author: "Amirul" },
-  { text: "Okay okay lah.", author: "Kenny Wong" },
-  { text: "Nothing much.", author: "Sarah Lim" },
+  "Just another normal day.",
+  "Okay okay lah.",
+  "Nothing much.",
 ];
-
 const sadQuotes = [
-  { text: "Need some rest...", author: "Farah Aziz" },
-  { text: "A bit down today.", author: "Daniel Chia" },
-  { text: "Tomorrow will be better.", author: "Uncle Lim" },
+  "Need some rest...",
+  "A bit down today.",
+  "Tomorrow will be better.",
 ];
 const colors = ["lightblue", "lightgreen", "lightpink"];
 
+const quotes = [
+  { text: "Hard work beats talent.", author: "Tim Notke" },
+  { text: "Never give up.", author: "Winston Churchill" },
+  { text: "Stay positive and keep pushing.", author: "Elon Musk" },
+];
+
 happyBtn2.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * happyQuotes.length);
-  moodDisplay2.textContent =
-    happyQuotes[randomIndex].text + " - " + happyQuotes[randomIndex].author;
-    document.body.style.backgroundColor = colors[randomIndex];
+  const randomIndex = getRandomIndex(happyQuotes.length);
+  moodDisplay2.textContent = happyQuotes[randomIndex];
+  getQuotes(randomIndex);
 });
 
 neutralBtn2.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * neutralQuotes.length);
-  moodDisplay2.textContent =
-    neutralQuotes[randomIndex].text + " - " + neutralQuotes[randomIndex].author;
-    document.body.style.backgroundColor = colors[randomIndex];
+  const randomIndex = getRandomIndex(neutralQuotes.length);
+  moodDisplay2.textContent = neutralQuotes[randomIndex];
+  getQuotes(randomIndex);
 });
 
 sadBtn2.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * sadQuotes.length);
-  moodDisplay2.textContent =
-    sadQuotes[randomIndex].text + " - " + sadQuotes[randomIndex].author;
-    document.body.style.backgroundColor = colors[randomIndex];
+  const randomIndex = getRandomIndex(sadQuotes.length);
+  moodDisplay2.textContent = sadQuotes[randomIndex];
+  getQuotes(randomIndex);
 });
+
+function getRandomIndex(arrayLength) {
+  const randomNumber = Math.floor(Math.random() * arrayLength);
+  return randomNumber;
+}
+
+function getQuotes(randomNumber) {
+  // Fade out
+  moodDisplay2.classList.remove("show");
+  document.getElementById("quote-box").classList.remove("show");
+
+    setTimeout(() => {
+    // Update text and color
+  quoteDisplay.textContent = quotes[randomNumber].text;
+  authorDisplay.textContent = quotes[randomNumber].author;
+  document.body.style.backgroundColor = colors[randomNumber];
+
+      // Fade back in
+    moodDisplay2.classList.add("show");
+    document.getElementById("quote-box").classList.add("show");
+  }, 1000);
+}
